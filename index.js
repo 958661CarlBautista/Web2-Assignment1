@@ -14,13 +14,15 @@ const users = [
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
 
+console.log("\n\nExercise 1: List of Character Names\n");
+
 users.forEach(function(characters){
   console.log(characters.name);
 });
 
 // Create a new constant that creates a list of names in HTML under the ID "names-list"
 const nameList = document.getElementById("names-list");
-for (let i = 0; i < users.lengtth; i++) {
+for (let i = 0; i < users.length; i++) {
   const listName = document.createElement("li");
   listName.textContent = users[i].name;
   nameList.appendChild(listName);
