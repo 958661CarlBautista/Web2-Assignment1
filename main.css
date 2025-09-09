@@ -7,7 +7,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 20;
+  line-height: 2; /*Reduced line height from 40 to 2*/
   color: lightgrey;
   background-color: #f5f5f5;
   padding: 20px;
@@ -87,6 +87,7 @@ ul {
 }
 
 ul li {
+  color:black; /* Changed text color to black for better readability */
   background: white;
   margin-bottom: 0.5rem;
   padding: 0.75rem;
