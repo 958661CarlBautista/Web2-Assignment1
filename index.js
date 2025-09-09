@@ -2,7 +2,7 @@
 
 // sample data - expanded Star Wars characters with varied ages
 const users = [
-  { id: 1, name: "Luke Skywalker" age: 23 },
+  { id: 1, name: "Luke Skywalker", age: 23 },
   { id: 2, name: "Darth Vader", age: 45 },
   { id: 3, name: "Princess Leia", age: 23 },
   { id: 4, name: "Obi-Wan Kenobi", age: 57 },
@@ -13,6 +13,18 @@ const users = [
   { id: 9, name: "C-3PO", age: 112 },
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
+
+users.forEach(function(characters){
+  console.log(characters.name);
+});
+
+// Create a new constant that creates a list of names in HTML under the ID "names-list"
+const nameList = document.getElementById("names-list");
+for (let i = 0; i < users.lengtth; i++) {
+  const listName = document.createElement("li");
+  listName.textContent = users[i].name;
+  nameList.appendChild(listName);
+}
 
 // broken test data for exercise 6
 
