@@ -43,6 +43,20 @@ function youngerThan40(){
 }
 youngerThan40();
 
+// Exercise 3: Reusable Function to Render character names
+function renderCharacterNames(array, elementId) {
+  const listElement = document.getElementById(elementId);
+  // Goes through the array and adds each name to the list
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].name){
+      const listName = document.createElement("li");
+      listName.textContent = array[i].name;
+      listElement.appendChild(listName);
+      //console.log("debug: Name added in exercise 3!")
+    }
+  }
+}
+renderCharacterNames(users, "function-list");
 
 
 // broken test data for exercise 6
