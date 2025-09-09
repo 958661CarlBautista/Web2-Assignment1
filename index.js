@@ -58,6 +58,20 @@ function renderCharacterNames(array, elementId) {
 }
 renderCharacterNames(users, "function-list");
 
+// Exercise 4: Function with Age Filter Parameter 
+function youngerThanAge(ageThreshold){
+  const listElement = document.getElementById("age-filter-list");
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].age < ageThreshold) {
+      const listName = document.createElement("li");
+      listName.textContent = users[i].name;
+      listElement.appendChild(listName);
+      //console.log("debug: under age threshold for exercise 4!")
+    }
+  }
+}
+youngerThanAge(75);
+// Discussed with instructor, age should be less than 75.
 
 // broken test data for exercise 6
 
