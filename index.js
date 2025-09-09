@@ -14,7 +14,7 @@ const users = [
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
 
-console.log("\n\nExercise 1: List of Character Names\n");
+console.log("Exercise 1: List of Character Names\n");
 
 users.forEach(function(characters){
   console.log(characters.name);
@@ -27,6 +27,23 @@ for (let i = 0; i < users.length; i++) {
   listName.textContent = users[i].name;
   nameList.appendChild(listName);
 }
+
+// Exercise 2: Filter list by Age Less than 40
+
+function youngerThan40(){
+  const youngCharList = document.getElementById("young-characters-list");
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].age < 40) {
+      const listName = document.createElement("li");
+      listName.textContent = users[i].name;
+      youngCharList.appendChild(listName);
+      //console.log("debug: less than 40!")
+    }
+  }
+}
+youngerThan40();
+
+
 
 // broken test data for exercise 6
 
