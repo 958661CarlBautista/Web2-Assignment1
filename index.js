@@ -66,7 +66,7 @@ function youngerThanAge(ageThreshold){
       const listName = document.createElement("li");
       listName.textContent = users[i].name;
       listElement.appendChild(listName);
-      //console.log("debug: under age threshold for exercise 4!")
+      console.log("debug:" + users[i].name + " is under "+ ageThreshold+ " threshold for exercise 4!")
     }
   }
 }
@@ -74,8 +74,7 @@ youngerThanAge(75);
 // Discussed with instructor, age should be less than 75.
 
 // Exercise 5: Error Handling for Missing Name
-function brokenArray(){
-  const BrokenUsers = [
+const BrokenUsers = [
       { id: 1, name: "Luke Skywalker", age: 23 },
       { id: 2, name: "Darth Vader", age: 45 },
       { id: 3, age: 23 }, // Missing Princess Leia name. 
@@ -83,19 +82,21 @@ function brokenArray(){
       { id: 5, name: "Yoda", age: 900 }
     ];
 
+function brokenArray(){
+
     const errors = document.getElementById("error-messages");
     const nameList = document.getElementById("error-handling-list");
 
     for (let i = 0; i < BrokenUsers.length; i++) {
-      if (BrokenUsers[i].name) {
+      if (!BrokenUsers[i].name) {
+        // Errir message in list
         const listName = document.createElement("li");
-        listName.textContent = BrokenUsers[i].name;
+        listName.textContent = "User id " + BrokenUsers[i].id + " is missing a name";
         nameList.appendChild(listName);
-        //console.log("debug: Name added in exercise 5!")
-      }
-      else{
+        // Error div message
         const msg = document.createElement("div");
-        const errorMessage = "Error: Character at index ${i} is missing a 'name' property.";
+        // Creates an error message in the console,.
+        const errorMessage = "Error: Character at index " + BrokenUsers[i].id + " is missing a 'name' property.";
         console.error(errorMessage);
         msg.textContent = errorMessage;
         errors.appendChild(msg);  
@@ -103,10 +104,3 @@ function brokenArray(){
     }
   }
 brokenArray();
-
-// Exercise 6: Test with broken data
-
-//const secondBrokenArray =
-
-
-// 6. Test your error handling by creating a second array that's intentionally broken (missing name properties) and passing it to your functions. Verify that your error handling works correctly and displays errors in the div with id "broken-array-errors"
