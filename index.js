@@ -73,6 +73,40 @@ function youngerThanAge(ageThreshold){
 youngerThanAge(75);
 // Discussed with instructor, age should be less than 75.
 
+// Exercise 5: Error Handling for Missing Name
+function brokenArray(){
+  const BrokenUsers = [
+      { id: 1, name: "Luke Skywalker", age: 23 },
+      { id: 2, name: "Darth Vader", age: 45 },
+      { id: 3, age: 23 }, // Missing Princess Leia name. 
+      { id: 4, name: "Obi-Wan Kenobi", age: 57 },
+      { id: 5, name: "Yoda", age: 900 }
+    ];
+
+    const errors = document.getElementById("error-messages");
+    const nameList = document.getElementById("error-handling-list");
+
+    for (let i = 0; i < BrokenUsers.length; i++) {
+      if (BrokenUsers[i].name) {
+        const listName = document.createElement("li");
+        listName.textContent = BrokenUsers[i].name;
+        nameList.appendChild(listName);
+        //console.log("debug: Name added in exercise 5!")
+      }
+      else{
+        const msg = document.createElement("div");
+        const errorMessage = "Error: Character at index ${i} is missing a 'name' property.";
+        msg.textContent = errorMessage;
+        errors.appendChild(msg);  
+      }
+    }
+  }
+brokenArray();
+
+
+
+
+
 // broken test data for exercise 6
 
 // 1. Print out the names of each character in the console, then render them in the HTML list with id "names-list"
